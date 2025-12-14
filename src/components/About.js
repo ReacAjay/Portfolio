@@ -2,7 +2,7 @@ import React from 'react'
 import {Carousel, Col, Row} from 'antd'
 const About = () => {
   return (
-    <Row className='mx-20'>
+    <Row className='abo mx-20'>
         <Col xs={24} sm={24}  md={24} lg={24} style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
             <h1 style={{fontSize:40,fontWeight:600}}>About Me</h1>
         </Col>

@@ -86,3 +86,38 @@
   width: 0px !important;
   left: 34px !important;
 }
+
+
+@media (min-width: 330px) {
+ .container1{
+  margin: 0rem 2.4rem !important;
+ }
+ .abo{
+    margin: 0rem 2.4rem !important;
+ }
+ .skills-container{
+    margin: 0rem 2.4rem !important;
+ }
+ .hire{
+  border: 1px solid #FD6F00;
+  border-radius: 10px;
+  font-size: 18px; 
+  height: 40px; 
+  min-width: 120px; 
+  padding: 0px 10px !important;
+  background-color: #FD6F00;
+}
+.cv{
+  border: 2px solid #707070;
+  border-radius: 10px;
+  font-size: 18px;
+  color: #707070; 
+  height: 40px; 
+  min-width: 120px; 
+  background-color: #1E1E1E;
+}
+.image-section{
+  margin-bottom: 20px !important;
+}
+
+}
