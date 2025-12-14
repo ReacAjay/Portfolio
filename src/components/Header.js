@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <Row className='xl:flex justify-between mx-20 py-8 mt-5'>
       {/* logo */}
-      <Col xs={24} sm={16}  md={6} className='logo '>
+      <Col xs={24} sm={16}  md={6} lg={6} className='logo '>
         <h4 style={{fontSize:30}} className='font-extrabold'>PORTFOLIO</h4>
       </Col>
       {/* menu */}

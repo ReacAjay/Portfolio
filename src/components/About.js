@@ -3,19 +3,19 @@ import {Carousel, Col, Row} from 'antd'
 const About = () => {
   return (
     <Row className='mx-20'>
-        <Col span={24} style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
+        <Col xs={24} sm={24}  md={24} lg={24} style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
             <h1 style={{fontSize:40,fontWeight:600}}>About Me</h1>
         </Col>
 
-        <Col span={24} style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
+        <Col xs={24} sm={24}  md={24} lg={24} style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
             <p style={{fontSize:20,fontWeight:600,color:'#707070',lineHeight: 2,wordSpacing:8,}}>I am a Full Stack Developer</p>
         </Col>
 
-        <Col className='mt-14' span={12} style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+        <Col className='mt-14' xs={24} sm={16}  md={12} lg={12} style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
             <img src="../about.png" alt="tech" className='ml-100 mt-5'/>
         </Col>
 
-        <Col className='my-20' span={12}>
+        <Col className='my-20' xs={24} sm={16}  md={12} lg={12}>
             <p  style={{
                 fontSize: 20,
                 fontWeight: 500,

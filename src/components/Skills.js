@@ -66,7 +66,7 @@ export const Skills = () => {
       </div>
       <Row gutter={[40, 40]} justify="center" className="py-20">
         {skills.map((skill, index) => (
-          <Col key={index} xs={24} sm={12} md={8} lg={4}>
+          <Col key={index} xs={12} sm={12} md={8} lg={4}>
             <div className="skill-card">
               <Progress
                 type="circle"

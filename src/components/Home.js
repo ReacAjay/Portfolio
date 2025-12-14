@@ -7,7 +7,7 @@ export const Home = () => {
 
       <Row className='container1 mx-20 mb-10'>
 
-        <Col span={12} className='content-section my-20'>
+        <Col xs={24} sm={16}  md={12} lg={12} className='content-section my-20'>
           <div className="about-content">
             <h2 style={{fontSize:28}}>Hi I am <br /> <b style={{color:'#aaa6a6'}}>Ajay Eswaran</b></h2>
             <h1 style={{fontSize:60}} className='developer font-semibold mt-4'>Full Stack Developer</h1>
@@ -29,13 +29,13 @@ export const Home = () => {
             </a>
           </div>
 
-          <div className='mt-16 space-x-8'>
+          <div className='mt-16 space-x-3'>
             <button type='submit' className='hire text-lg px-5 py-1'>Hire Me</button>
              <button type='submit' className='cv text-lg font-semibold px-5 py-1'>Download CV</button>
           </div>
         </Col>
 
-        <Col span={12} className='image-section flex justify-end w-full'>
+        <Col xs={24} sm={16}  md={6} lg={12} className='image-section flex justify-end w-full'>
           <img src="../logo.png" alt="tech" className='ml-100 mt-5'/>
         </Col>
       </Row>
