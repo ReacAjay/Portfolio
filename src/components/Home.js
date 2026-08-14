@@ -3,10 +3,9 @@ import resume from '../assets/Ajay_E_Resume.pdf';
 export const Home = () => {
   return (
     <section className="hero">
-      <div className="hero-inner">
+      <div className="hero-inner hero-animate">
         {/* Left Content */}
         <div>
-          {/* <p className="hero-greeting">👋 Welcome to my portfolio</p> */}
           <h1 className="hero-name">
             Hi, I'm <br />
             <span className="gradient-text">Ajay Eswaran</span>

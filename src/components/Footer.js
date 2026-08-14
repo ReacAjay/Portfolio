@@ -1,14 +1,18 @@
-import React from 'react';
+import { useReveal } from '../hooks/useReveal';
 
 export const Footer = () => {
+  const ref = useReveal(0.1);
+
   return (
     <footer className="footer">
-      <div className="footer-inner">
+      <div ref={ref} className="footer-inner reveal-up">
         <div className="footer-logo">AE.</div>
 
         <ul className="footer-nav">
-          {["About", "Skills", "Education", "Contact"].map(item => (
-            <li key={item}><a href={`#${item.toLowerCase()}`}>{item}</a></li>
+          {["About", "Skills", "Education", "Contact"].map((item, i) => (
+            <li key={item} style={{ transitionDelay: `${0.05 * i}s` }}>
+              <a href={`#${item.toLowerCase()}`}>{item}</a>
+            </li>
           ))}
         </ul>
 

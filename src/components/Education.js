@@ -1,4 +1,4 @@
-import React from 'react';
+import { useReveal } from '../hooks/useReveal';
 
 const educations = [
   {
@@ -14,16 +14,22 @@ const educations = [
 ];
 
 export const Education = () => {
+  const headRef  = useReveal();
+  const cardsRef = useReveal();
+
   return (
     <section className="section" id="education">
       <div className="section-inner">
-        <span className="section-tag">My Background</span>
-        <h2 className="section-title">Education <span className="gradient-text">Journey</span></h2>
-        <p className="section-sub">The academic foundation that shaped my technical expertise.</p>
 
-        <div className="edu-grid">
-          {educations.map(({ icon, degree, desc }) => (
-            <div className="edu-card" key={degree}>
+        <div ref={headRef} className="reveal-up">
+          <span className="section-tag">My Background</span>
+          <h2 className="section-title">Education <span className="gradient-text">Journey</span></h2>
+          <p className="section-sub">The academic foundation that shaped my technical expertise.</p>
+        </div>
+
+        <div ref={cardsRef} className="edu-grid stagger">
+          {educations.map(({ icon, degree, desc }, i) => (
+            <div className="edu-card reveal-scale" key={degree} style={{ transitionDelay: `${0.1 + i * 0.15}s` }}>
               <div className="edu-icon">{icon}</div>
               <h3 className="edu-degree">{degree}</h3>
               <p className="edu-desc">{desc}</p>
