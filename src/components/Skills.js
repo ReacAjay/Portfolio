@@ -1,89 +1,93 @@
-import React from "react";
-import { Progress, Row, Col } from "antd";
-// import {
-//   AntDesignOutlined,
-//   HighlightOutlined,
-//   PictureOutlined,
-//   PlayCircleOutlined
-// } from "@ant-design/icons";
+import React from 'react';
 
-// import "./skills.css";
-
-const skills = [
+const skillGroups = [
   {
-    name: "HTML",
-    percent: 100,
-    icon: <span class="fa-brands fa-html5 text-6xl"></span>
+    category: "Frontend",
+    label: "UI & Interaction",
+    skills: [
+      { name: "HTML",       fa: "fa-html5",    color: "#e34f26" },
+      { name: "CSS",        fa: "fa-css3-alt", color: "#1572b6" },
+      { name: "JavaScript", fa: "fa-js",       color: "#f7df1e" },
+      { name: "React.js",   fa: "fa-react",    color: "#61dafb" },
+      { name: "Vue.js",     fa: "fa-vuejs",    color: "#42b883" },
+      { name: "Tailwind",   img: "https://cdn.simpleicons.org/tailwindcss/06b6d4", color: "#06b6d4" },
+      { name: "Vuetify",    img: "https://cdn.simpleicons.org/vuetify/1867c0",     color: "#1867c0" },
+      // { name: "Ant Design", img: "https://cdn.simpleicons.org/antdesign/0170fe",   color: "#0170fe" },
+    ],
   },
   {
-    name: "CSS",
-    percent: 100,
-    icon: <span class="fa-brands fa-css3 text-6xl	"></span>
+    category: "Backend & DB",
+    label: "Server, API & Data",
+    skills: [
+      { name: "Node.js",    fa: "fa-node-js",  color: "#339933" },
+      {
+        name: "Express.js",
+        img: "https://cdn.simpleicons.org/express/ffffff",
+        color: "#6c63ff",
+      },
+      {
+        name: "MongoDB",
+        img: "https://cdn.simpleicons.org/mongodb/47a248",
+        color: "#47a248",
+      },
+      {
+        name: "MySQL",
+        img: "https://cdn.simpleicons.org/mysql/00758f",
+        color: "#00758f",
+      },
+      {
+        name: "Redis",
+        img: "https://cdn.simpleicons.org/redis/dc382d",
+        color: "#dc382d",
+      },
+    ],
   },
   {
-    name: "JavaScript",
-    percent: 90,
-    icon: <span class="fa-brands fa-js text-6xl	"></span>
-  },
-  {
-    name: "React.js",
-    percent: 80,
-    icon: <span class="fa-brands fa-react text-6xl	"></span>
-  },
-  {
-    name: "Vue.js",
-    percent: 82,
-    icon: <span class="fa-brands fa-vuejs text-6xl	"></span>
-  },
-  {
-    name: "Node.js",
-    percent: 70,
-    icon: <span class="fa-brands fa-node-js text-6xl	"></span>
-  },
-  {
-    name: "Express.js",
-    percent: 70,
-    icon: <span class="fa-brands fa-code text-6xl	"></span>
-  },
-  {
-    name: "Mongo DB",
-    percent: 75,
-    icon: <span class="fa-brands fa-envira text-6xl	"></span>
-  },
-  {
-    name: "MySQL",
-    percent: 65,
-    icon: <span class="fa-brands fa-database text-6xl	"></span>
+    category: "Mobile",
+    label: "App Development",
+    skills: [
+      { name: "React Native", fa: "fa-react", color: "#61dafb" },
+    ],
   },
 ];
 
 export const Skills = () => {
   return (
-    <div className="skills-container mx-20">
-      <div className="heading">
-        <h1 className='text-center' style={{fontSize:40,fontWeight:600}}>Skills</h1>
-        <p className='text-center mt-2' style={{fontSize:20,fontWeight:600,color:'#707070',lineHeight: 2,wordSpacing:8,}}>Specialized knowledge related to particular technologies or tools</p>
-      </div>
-      <Row gutter={[40, 40]} justify="center" className="py-20">
-        {skills.map((skill, index) => (
-          <Col key={index} xs={12} sm={12} md={8} lg={4}>
-            <div className="skill-card">
-              <Progress
-                type="circle"
-                percent={skill.percent}
-                strokeColor="#FD6F00"
-                trailColor="#333"
-                strokeWidth={6}
-                format={() => skill.icon}
-                width={120}
-              />
-              <h3>{skill.percent}%</h3>
-              <p style={{fontSize:20,fontWeight:600}}>{skill.name}</p>
+    <section className="section" id="skills">
+      <div className="section-inner">
+        <span className="section-tag">What I Know</span>
+        <h2 className="section-title">My <span className="gradient-text">Skills</span></h2>
+        <p className="section-sub">Technologies and tools I use to bring ideas to life.</p>
+
+        <div className="skills-bento">
+          {skillGroups.map(({ category, label, skills }) => (
+            <div className="sb-group" key={category}>
+              {/* Left: category label */}
+              <div className="sb-label">
+                <div className="sb-label-line" />
+                <div>
+                  <div className="sb-cat">{category}</div>
+                  <div className="sb-sub">{label}</div>
+                </div>
+              </div>
+
+              {/* Right: tiles */}
+              <div className="sb-tiles">
+                {skills.map(({ name, fa, img, color }) => (
+                  <div className="sb-tile" key={name} style={{ "--sc": color }}>
+                    <div className="sb-tile-glow" />
+                    {img
+                      ? <img src={img} alt={name} className="sb-tile-img" />
+                      : <i className={`fa-brands ${fa} sb-tile-icon`} />
+                    }
+                    <span className="sb-tile-name">{name}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-          </Col>
-        ))}
-      </Row>
-    </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
-

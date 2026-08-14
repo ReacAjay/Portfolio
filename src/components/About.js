@@ -1,37 +1,56 @@
-import React from 'react'
-import {Carousel, Col, Row} from 'antd'
+import React from 'react';
+
 const About = () => {
   return (
-    <Row className='abo mx-20'>
-        <Col xs={24} sm={24}  md={24} lg={24} style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
-            <h1 style={{fontSize:40,fontWeight:600}}>About Me</h1>
-        </Col>
+    <section className="section" id="about">
+      <div className="section-inner">
+        <span className="section-tag">About Me</span>
+        <h2 className="section-title">Crafting Digital <span className="gradient-text">Experiences</span></h2>
 
-        <Col xs={24} sm={24}  md={24} lg={24} style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
-            <p style={{fontSize:20,fontWeight:600,color:'#707070',lineHeight: 2,wordSpacing:8,}}>I am a Full Stack Developer</p>
-        </Col>
+        <div className="about-grid" style={{ marginTop: 56 }}>
+          {/* Image */}
+          <div className="about-img-wrap">
+            <div className="about-img-box">
+              <img src="/image/Ajay1.png" alt="Ajay Eswaran" />
+            </div>
+            <div className="about-badge">
+              <div className="about-badge-num">1.5+</div>
+              <div className="about-badge-label">Years Experience</div>
+            </div>
+          </div>
 
-        <Col className='mt-14' xs={24} sm={16}  md={12} lg={12} style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
-            <img src="../about.png" alt="tech" className='ml-100 mt-5'/>
-        </Col>
-
-        <Col className='my-20' xs={24} sm={16}  md={12} lg={12}>
-            <p  style={{
-                fontSize: 20,
-                fontWeight: 500,
-                textAlign: "justify",
-                lineHeight: 2,
-                wordSpacing:8,
-                color: "#aaa6a6",
-                maxWidth: "800px"}}>
-                    I am a Full Stack Developer with a passion for creating beautiful and functional web applications. 
-                    I specialize in creating clean, responsive, and visually appealing interfaces using HTML, CSS, Antd, TailWind, JavaScript, React, and Vue, while ensuring seamless user experiences across devices.
-
-                    On the backend, I have hands-on experience designing and developing RESTful APIs using Node.js and Express.js, along with managing and optimizing databases such as MySQL and MongoDB. I focus on writing clean, maintainable, and reusable code, following best practices for performance, security, and scalability.
+          {/* Text */}
+          <div className="about-text">
+            <span className="section-tag">Who I Am</span>
+            <h3 className="section-title" style={{ fontSize: 32, marginBottom: 20 }}>
+              Full Stack Developer
+            </h3>
+            <p>
+              I'm a Full Stack Developer with a passion for creating beautiful and functional web applications.
+              I specialize in clean, responsive, and visually appealing interfaces using React, Vue, and modern CSS frameworks.
             </p>
-        </Col>
-    </Row>
-  )
-}
+            <p>
+              On the backend, I design and develop RESTful APIs using Node.js and Express.js, with hands-on experience
+              in MySQL and MongoDB. I focus on clean, maintainable code following best practices for performance and scalability.
+            </p>
 
-export default About
+            <div className="about-stats">
+              {[
+                { num: "10+", label: "Projects Completed" },
+                { num: "5+", label: "Technologies" },
+                { num: "100%", label: "Client Satisfaction" },
+              ].map(({ num, label }) => (
+                <div key={label}>
+                  <div className="about-stat-num gradient-text">{num}</div>
+                  <div className="about-stat-label">{label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default About;
