@@ -1,11 +1,10 @@
 import { useRef, useState } from 'react';
-import emailjs from '@emailjs/browser';
 import { useReveal } from '../hooks/useReveal';
 
 // ── Fill these in after setting up EmailJS ──────────────────────────
-const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // e.g. 'service_abc123'
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // e.g. 'template_xyz456'
-const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // e.g. 'abcDEFghiJKL'
+const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';
+const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';
 // ────────────────────────────────────────────────────────────────────
 
 const contactInfo = [
@@ -27,6 +26,8 @@ const Contact = () => {
     setStatus('sending');
 
     try {
+      // Dynamically import emailjs only when needed
+      const emailjs = (await import('@emailjs/browser')).default;
       await emailjs.sendForm(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
